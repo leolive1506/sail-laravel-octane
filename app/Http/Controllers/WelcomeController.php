@@ -12,8 +12,8 @@ class WelcomeController extends Controller
     {
         try {
             $logging = new LoggingClient([
-                'projectId' => 'log-octane-swoole',
-                'keyFile' => json_decode(file_get_contents(base_path('google/log-octane-swoole.json')), true)
+                'projectId' => env('CLOUD_GOOGLE_PROJECT_ID'),
+                'keyFile' => json_decode(file_get_contents(base_path(env('CLOUD_GOOGLE_KEY_FILE'))), true)
             ]);
 
 
